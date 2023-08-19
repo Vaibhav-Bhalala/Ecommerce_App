@@ -12,9 +12,21 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
-    Timer(Duration(seconds: 3), () {
-      Navigator.pushReplacementNamed(context, 'home');
+    Timer(Duration(seconds: 4), () {
+      Navigator.pushReplacementNamed(context, 'home_page');
     });
-    return Scaffold(body: Container(height:double.infinity,width: double.infinity,decoration: BoxDecoration(image: DecorationImage(image: NetworkImage("https://static.vecteezy.com/system/resources/thumbnails/007/407/098/small/groceries-fresh-product-logo-set-free-vector.jpg"),fit: BoxFit.cover)),),);
+    return Scaffold(
+      body: Center(
+        child: Container(
+          height: 300,
+          width: 300,
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: NetworkImage(
+                      "https://s3.amazonaws.com/ionic-marketplace/grocery-android-app-template-grocery-ordering-ios-app-template-ionic-5-groshop/icon.png"),
+                  fit: BoxFit.cover)),
+        ),
+      ),
+    );
   }
 }

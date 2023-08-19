@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Color(0xfff5f4f2),
       appBar: AppBar(
-        toolbarHeight: 20,
+        toolbarHeight: 0,
         elevation: 0,
         backgroundColor: Color(0xff597e5c),
       ),
@@ -41,7 +41,6 @@ class _HomePageState extends State<HomePage> {
                       width: w * .900,
                       child: Row(
                         children: [
-
                           Column(
                             children: [
                               Container(
@@ -164,7 +163,8 @@ class _HomePageState extends State<HomePage> {
                               ),
                             ],
                             image: DecorationImage(
-                              image: NetworkImage("https://dealroup.com/wp-content/uploads/2020/05/Grocery-Offers.jpg"),
+                              image: NetworkImage(
+                                  "https://dealroup.com/wp-content/uploads/2020/05/Grocery-Offers.jpg"),
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -193,14 +193,14 @@ class _HomePageState extends State<HomePage> {
                             hint: Text("Select Category"),
                             value: select,
                             items: Cat.map(
-                                  (e) => DropdownMenuItem(
+                              (e) => DropdownMenuItem(
                                 child: Text(e),
                                 value: e,
                               ),
                             ).toList(),
                             onChanged: (val) {
                               setState(
-                                    () {
+                                () {
                                   select = val;
                                 },
                               );
@@ -226,25 +226,25 @@ class _HomePageState extends State<HomePage> {
                     ),
                     (select != null)
                         ? SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        child: product(category: select!))
+                            scrollDirection: Axis.horizontal,
+                            child: product(category: select!))
                         : SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Row(
-                        children: [
-                          product(category: "lamp"),
-                          product(category: "chair"),
-                          product(category: "table"),
-                          product(category: "kitchen"),
-                          product(category: "cupboard"),
-                          product(category: "vase"),
-                          product(category: "nightstand"),
-                          product(category: "mirrors"),
-                          product(category: "garden"),
-                          product(category: "sofa"),
-                        ],
-                      ),
-                    ),
+                            scrollDirection: Axis.horizontal,
+                            child: Row(
+                              children: [
+                                product(category: "Honey"),
+                                product(category: "Nuts & Dry Fruits"),
+                                product(category: "Jam"),
+                                product(category: "Breakfast Items"),
+                                product(category: "Marmalade"),
+                                product(category: "Spreads"),
+                                product(category: "Energy Drinks"),
+                                product(category: "Chocolates"),
+                                product(category: "Baking Essentials"),
+                                product(category: "Sweet Stores"),
+                              ],
+                            ),
+                          ),
                     Container(
                       height: 100,
                     )
